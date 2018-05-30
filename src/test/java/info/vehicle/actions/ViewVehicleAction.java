@@ -16,6 +16,7 @@ public class ViewVehicleAction implements BaseTest {
         return regText;
     }
 
+
     public static void Execute(WebDriver driver, List<Map<String, String>> testData ) throws Exception {
         String testReg = testData.get(BasePage.testDataIndex).get("Registration");
         Assert.assertEquals(getRegistrationNumber(), testReg);

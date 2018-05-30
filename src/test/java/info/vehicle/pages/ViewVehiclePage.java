@@ -13,4 +13,5 @@ public class ViewVehiclePage extends BasePage {
 
     @FindBy(how=How.CLASS_NAME, using="reg-mark")
     public static WebElement registrationNumber;
+
 }

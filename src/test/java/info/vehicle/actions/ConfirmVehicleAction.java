@@ -7,6 +7,7 @@ import info.vehicle.methods.AssertionMethods;
 import info.vehicle.methods.BaseTest;
 import info.vehicle.pages.BasePage;
 import info.vehicle.pages.ConfirmVehiclePage;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.util.List;
@@ -46,8 +47,17 @@ public class ConfirmVehicleAction {
 
     public static void Execute(WebDriver driver, List <Map <String, String>> testData) throws Exception {
         String testReg = testData.get(BasePage.testDataIndex).get("Registration");
-        confirmVehicleDetailsSelect(getRegistrationNumber().equals(testReg));
-        Log.info(" Assert Registartion entered is same as in confirm Vehicle page" );
+        Assert.assertEquals(getRegistrationNumber(),testReg);
+        Log.info("************************************************************************************ " +
+                "Assert Registartion entered is same as in confirm Vehicle page" );
+        String testMake = testData.get(BasePage.testDataIndex).get("Make");
+        Assert.assertEquals(getmake(),testMake);
+        Log.info("************************************************************************************ " +
+                "Assert Make of the Vehicle from Excel is same as in confirm Vehicle page" );
+        String testColour = testData.get(BasePage.testDataIndex).get("Colour");
+        confirmVehicleDetailsSelect(getcolour().equals(testColour));
+        Log.info("************************************************************************************" +
+                " Assert Colour of the Vehicle from Excel is ssame as in confirm Vehicle page" );
     }
 
 
