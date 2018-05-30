@@ -1,0 +1,8 @@
+/target
+/Screenshots
+.classpath
+chromedriver
+.idea/
+.gradle/
+geckodriver
+build/
